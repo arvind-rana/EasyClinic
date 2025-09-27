@@ -1,3 +1,65 @@
+<<<<<<< HEAD
+# EasyClinic
+Full Stack Doctors Appointment Platform with Next JS, Neon, Tailwind, Vonage, Shadcn UI
+
+## 📌 Table of content
+<a href="overview">Overview</a>
+<a href="tools-technologies">Tools & Technologies</a>
+<a href="project-structure">Project-structur</a>
+<a href="dashboart">Dashboard</a>
+<a href="author">Author-contack</a>
+<h2><a class="anchor" id="overview"></a>Overview<h2>
+EasyClinic is a web-based application designed to streamline clinic management and patient-doctor interactions. It enables clinics to efficiently manage appointments, video consultations, patient records, and staff workflows in a secure and user-friendly environment.
+
+<h2><a class="anchor" id="tools-technologies"></a>Tools & Technologies<h2>
+Frontend: Next.js, React.js, Tailwind CSS, Radix UI
+
+Backend & DB: Node.js, Prisma, PostgreSQL
+
+Auth & Security: Clerk, Environment Variables
+
+Video & Real-Time: Vonage Video API (OpenTok), WebRTC
+
+Deployment & Dev Tools: Vercel, Git & GitHub
+
+Notifications: Sonner / Toast Notifications
+
+<h2><a class="anchor" id="project-structure"></a>project-structure<h2>
+easyclinic/
+│
+├── app/                    # Next.js App Router
+│   ├── api/                # API routes (backend logic)
+│   │   └── video/          # Video session API (Vonage)
+│   ├── appointments/       # Appointment pages
+│   ├── video-call/         # Video call page & UI
+│   └── layout.js           # Root layout
+│
+├── components/             # Reusable UI components
+│   ├── ui/                 # Buttons, Cards, Modals, etc.
+│   └── VideoCallUI.js      # Video call component
+│
+├── prisma/                 # Prisma schema & migrations
+│   └── schema.prisma
+│
+├── public/                 # Static assets (images, icons)
+│   └── images/
+│
+├── styles/                 # Global styles / Tailwind config
+│   └── globals.css
+│
+├── .env.local              # Environment variables (API keys, secrets)
+├── package.json
+├── next.config.js
+└── README.md
+
+
+<h2><a class="anchor" id="dashboard"></a>dashboard<h2>
+
+<h2><a class="anchor" id="author"></a>author-contack<h2>
+ Email: arvindrana8650@gmail.com
+ 🔗[Leetcod]: https://leetcode.com/u/arvind_rana15/
+
+=======
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +96,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+>>>>>>> f02a31c (Initial commit from Create Next App)
