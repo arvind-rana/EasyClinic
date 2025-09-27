@@ -48,11 +48,11 @@ easyclinic/
 └── README.md
 
 
-<h4><a class="anchor" id="dashboard"></a>dashboard<h4>
+
 
 <h4><a class="anchor" id="author"></a>author-contack<h4>
  Email: arvindrana8650@gmail.com
- 🔗[Leetcod]: https://leetcode.com/u/arvind_rana15/
+ 
 
 =======
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
