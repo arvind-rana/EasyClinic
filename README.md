@@ -8,10 +8,10 @@ Full Stack Doctors Appointment Platform with Next JS, Neon, Tailwind, Vonage, Sh
 <a href="project-structure">Project-structur</a>
 <a href="dashboart">Dashboard</a>
 <a href="author">Author-contack</a>
-<h2><a class="anchor" id="overview"></a>Overview<h2>
+<h4><a class="anchor" id="overview"></a>Overview<h4>
 EasyClinic is a web-based application designed to streamline clinic management and patient-doctor interactions. It enables clinics to efficiently manage appointments, video consultations, patient records, and staff workflows in a secure and user-friendly environment.
 
-<h3><a class="anchor" id="tools-technologies"></a>Tools & Technologies<h3>
+<h4><a class="anchor" id="tools-technologies"></a>Tools & Technologies<h4>
 Frontend: Next.js, React.js, Tailwind CSS, Radix UI
 
 Backend & DB: Node.js, Prisma, PostgreSQL
@@ -24,7 +24,7 @@ Deployment & Dev Tools: Vercel, Git & GitHub
 
 Notifications: Sonner / Toast Notifications
 
-<h3><a class="anchor" id="project-structure"></a>project-structure<h3>
+<h4><a class="anchor" id="project-structure"></a>project-structure<h4>
 easyclinic/
 │
 ├── app/                    # Next.js App Router
@@ -53,9 +53,9 @@ easyclinic/
 └── README.md
 
 
-<h3><a class="anchor" id="dashboard"></a>dashboard<h3>
+<h4><a class="anchor" id="dashboard"></a>dashboard<h4>
 
-<h3><a class="anchor" id="author"></a>author-contack<h3>
+<h4><a class="anchor" id="author"></a>author-contack<h4>
  Email: arvindrana8650@gmail.com
  🔗[Leetcod]: https://leetcode.com/u/arvind_rana15/
 
