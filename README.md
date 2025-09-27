@@ -2,12 +2,7 @@
 # EasyClinic
 Full Stack Doctors Appointment Platform with Next JS, Neon, Tailwind, Vonage, Shadcn UI
 
-## 📌 Table of content
-<a href="overview">Overview</a>
-<a href="tools-technologies">Tools & Technologies</a>
-<a href="project-structure">Project-structur</a>
-<a href="dashboart">Dashboard</a>
-<a href="author">Author-contack</a>
+
 <h4><a class="anchor" id="overview"></a>Overview<h4>
 EasyClinic is a web-based application designed to streamline clinic management and patient-doctor interactions. It enables clinics to efficiently manage appointments, video consultations, patient records, and staff workflows in a secure and user-friendly environment.
 
