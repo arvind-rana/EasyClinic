@@ -1,94 +1,142 @@
-<<<<<<< HEAD
-# EasyClinic
-Full Stack Doctors Appointment Platform with Next JS, Neon, Tailwind, Vonage, Shadcn UI
+# 🏥 EasyClinic
 
+A **Full-Stack Doctor Appointment & Video Consultation Platform** built with **Next.js, Neon PostgreSQL, Clerk, Vonage, Tailwind, and Shadcn UI**.
 
-<h4><a class="anchor" id="overview"></a>Overview<h4>
-EasyClinic is a web-based application designed to streamline clinic management and patient-doctor interactions. It enables clinics to efficiently manage appointments, video consultations, patient records, and staff workflows in a secure and user-friendly environment.
+EasyClinic helps clinics streamline **appointments**, **video calls**, **patient records**, and **workflow management**—all inside one modern web application.
 
-<h4><a class="anchor" id="tools-technologies"></a>Tools & Technologies<h4>
-Frontend: Next.js, React.js, Tailwind CSS, Radix UI
+---
 
-Backend & DB: Node.js, Prisma, PostgreSQL
+## 📌 **Overview**
 
-Auth & Security: Clerk, Environment Variables
+EasyClinic is a web-based solution that provides:
 
-Video & Real-Time: Vonage Video API (OpenTok), WebRTC
+* Online doctor appointment booking
+* Secure video consultations using **Vonage (OpenTok)**
+* Staff and clinic management tools
+* Real-time patient-doctor interaction
+* Clean & modern UI powered by Tailwind + Shadcn
 
-Deployment & Dev Tools: Vercel, Git & GitHub
+---
 
-Notifications: Sonner / Toast Notifications
+## 🚀 **Tech Stack**
 
-<h4><a class="anchor" id="project-structure"></a>project-structure<h4>
+### **Frontend**
+
+* Next.js (App Router)
+* React.js
+* Tailwind CSS
+* Shadcn UI / Radix UI
+
+### **Backend**
+
+* Next.js API Routes
+* Node.js
+* Prisma ORM
+* Neon PostgreSQL
+
+### **Auth & Security**
+
+* Clerk Authentication
+* Environment Variables
+
+### **Video & Real-Time Communication**
+
+* Vonage Video API (OpenTok)
+* WebRTC
+
+### **Dev Tools & Deployment**
+
+* Vercel
+* Git & GitHub
+* Sonner Notifications
+
+---
+
+## 🧱 **Project Structure**
+
+```
 easyclinic/
 │
-├── app/                    # Next.js App Router
-│   ├── api/                # API routes (backend logic)
-│   │   └── video/          # Video session API (Vonage)
-│   ├── appointments/       # Appointment pages
-│   ├── video-call/         # Video call page & UI
-│   └── layout.js           # Root layout
+├── app/                     # Next.js App Router
+│   ├── api/                 # API routes (backend logic)
+│   │   └── video/           # Vonage video session handlers
+│   ├── appointments/        # Appointment pages
+│   ├── video-call/          # Video call interface
+│   └── layout.js            # Root layout
 │
-├── components/             # Reusable UI components
-│   ├── ui/                 # Buttons, Cards, Modals, etc.
-│   └── VideoCallUI.js      # Video call component
+├── components/              # Reusable UI components
+│   └── ui/                  # Buttons, Cards, Modals, etc.
+│   └── VideoCallUI.js       # Video call component
 │
-├── prisma/                 # Prisma schema & migrations
+├── prisma/                  # Prisma schema & DB migrations
 │   └── schema.prisma
 │
-├── public/                 # Static assets (images, icons)
+├── public/                  # Static assets (images, icons)
 │   └── images/
 │
-├── styles/                 # Global styles / Tailwind config
+├── styles/                  # Global styling
 │   └── globals.css
 │
-├── .env.local              # Environment variables (API keys, secrets)
+├── .env.local               # Environment variables
 ├── package.json
 ├── next.config.js
 └── README.md
+```
 
+---
 
+## ⚙️ **Getting Started**
 
+### **1. Install dependencies**
 
-<h4><a class="anchor" id="author"></a>author-contack<h4>
- Email: arvindrana8650@gmail.com
- 
+```bash
+npm install
+```
 
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### **2. Set up environment variables**
 
-## Getting Started
+Create a `.env.local` file:
 
-First, run the development server:
+```env
+DATABASE_URL=""
+CLERK_PUBLISHABLE_KEY=""
+CLERK_SECRET_KEY=""
+VONAGE_API_KEY=""
+VONAGE_API_SECRET=""
+VONAGE_APP_ID=""
+```
+
+### **3. Run Prisma migrations**
+
+```bash
+npx prisma migrate dev
+```
+
+### **4. Start development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **[http://localhost:3000](http://localhost:3000)** in the browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🩺 **Features**
 
-## Learn More
+* 📅 Book and manage clinic appointments
+* 🎥 Live video consultations (Vonage + WebRTC)
+* 🔐 Secure authentication (Clerk)
+* 📊 Clinic, doctor, and patient dashboard
+* 🗂️ Patient records & management
+* 🖼️ Modern & responsive UI (Shadcn + Tailwind)
+* 🔔 Toast notifications (Sonner)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👨‍💻 **Author Contact**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Email:** [arvindrana8650@gmail.com](mailto:arvindrana8650@gmail.com)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> f02a31c (Initial commit from Create Next App)
