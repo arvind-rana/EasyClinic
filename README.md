@@ -10,7 +10,8 @@ EasyClinic helps clinics streamline **appointments**, **video calls**, **patient
 
 EasyClinic is a web-based solution that provides:
 
-* Online doctor appointment booking
+* Online doctor appointment booking<img width="1914" height="828" alt="Screenshot 2025-08-28 093502" src="https://github.com/user-attachments/assets/3aa9ebe6-9f24-4eb7-a4e3-075695609548" />
+
 * Secure video consultations using **Vonage (OpenTok)**
 * Staff and clinic management tools
 * Real-time patient-doctor interaction
