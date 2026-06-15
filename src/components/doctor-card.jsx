@@ -1,56 +1,63 @@
-import React from 'react'
-import { Card, CardContent } from './ui/card'
-import { Badge, Calendar, Star,User } from 'lucide-react'
-import {Link} from 'next/link'
-import { Button } from './ui/button'
+import { Award, Coins, Stethoscope, UserRound } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
- 
-export function DoctorCard({doctor})  {
+export function DoctorCard({ doctor }) {
   return (
-    <Card className="border-emerald-900/20 hover: border-emerald-700/40 transition-all">
-    <CardContent className='p-4'>
-      <div  className='flex itme-center gap-4'>
-        <div  className='w-12 h-12 rounded-full bg-emerald-900/20 flex item-center justify-center flex-shrink-0'>
-        {
-            doctor.imgUrl ? (
-              <img 
-              src={doctor.imageUrl}
-              alt={doctor.name}
-              className='w-12 h-12 rounded-full object-cover'
+    <Card className="border-emerald-900/20 hover:border-emerald-700/40 transition-all">
+      <CardContent className="p-5">
+        <div className="flex gap-4">
+          <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-emerald-900/20 flex items-center justify-center">
+            {doctor.imageUrl ? (
+              <img
+                src={doctor.imageUrl}
+                alt={doctor.name ? `Dr. ${doctor.name}` : "Doctor"}
+                className="h-full w-full object-cover"
               />
-            ):(
-             <User className="h-4 w-4 text-emerald-400"/>
+            ) : (
+              <UserRound className="h-8 w-8 text-emerald-400" />
             )}
-        </div>
+          </div>
 
-        <div>
-            <div className='flex flex-col sm:flex-row sm:item-center sm:justify-between gap-2 mb-2'>
-               <h3 className='font-medium text-lg text-white'>
-                 {doctor.name}
-               </h3>
-               <Badge variant="outline">
-                <Star className='h-3 w-3 mr-1'>
-                  Varified
-                </Star>
-               </Badge>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <h3 className="font-semibold text-white">
+                  Dr. {doctor.name || "Unnamed Doctor"}
+                </h3>
+                <p className="mt-1 flex items-center text-sm text-muted-foreground">
+                  <Stethoscope className="mr-1.5 h-4 w-4 text-emerald-400" />
+                  {doctor.specialty}
+                </p>
+              </div>
+
+              <Badge
+                variant="outline"
+                className="border-emerald-900/30 bg-emerald-900/20 text-emerald-400"
+              >
+                Verified
+              </Badge>
             </div>
-            <p className='text-sm text-muted-foreground mb-1'>
-                {doctor.spaciality} . {doctor.experience} year experience
-            </p>
-            <div className='mt-4 line-clamp-3 text-sm text-muted-foreground'> {doctor.description}</div>
-            <Button
-            asChild
-            className="w-full">
-               <Link href={`/doctors/${doctor.speciality}/${doctor.id}`}> 
-               <Calendar className='h-4 w-4 mr-2'/>
-               View profile and Book
-               </Link> 
-            </Button>
+
+            <div className="mt-4 grid grid-cols-1 gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+              <div className="flex items-center">
+                <Award className="mr-1.5 h-4 w-4 text-emerald-400" />
+                {doctor.experience ?? 0} years experience
+              </div>
+              <div className="flex items-center">
+                <Coins className="mr-1.5 h-4 w-4 text-emerald-400" />
+                {doctor.credits ?? 0} credits available
+              </div>
+            </div>
+
+            {doctor.description && (
+              <p className="mt-4 line-clamp-3 text-sm text-muted-foreground">
+                {doctor.description}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
-    </CardContent>
+      </CardContent>
     </Card>
-  )
+  );
 }
-
-

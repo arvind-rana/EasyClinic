@@ -1,12 +1,13 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
 
-const inter = Inter({ subset: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "DocEase- Easily access doctor's appointment",

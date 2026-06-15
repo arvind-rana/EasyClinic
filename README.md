@@ -1,143 +1,70 @@
-# 🏥 EasyClinic
+# EasyClinic
 
-A **Full-Stack Doctor Appointment & Video Consultation Platform** built with **Next.js, Neon PostgreSQL, Clerk, Vonage, Tailwind, and Shadcn UI**.
+A full-stack doctor appointment and video consultation platform built with Next.js, Neon PostgreSQL, Clerk, Prisma, Vonage, Tailwind CSS, and Shadcn UI.
 
-EasyClinic helps clinics streamline **appointments**, **video calls**, **patient records**, and **workflow management**—all inside one modern web application.
+EasyClinic helps clinics manage appointments, doctor availability, patient workflows, authentication, and video calls in one modern web application.
 
----
+## Features
 
-## 📌 **Overview**
+- Doctor and patient onboarding
+- Appointment booking and management
+- Doctor availability settings
+- Video consultation flow
+- Admin doctor verification
+- Clerk authentication
+- Prisma and PostgreSQL data layer
+- Tailwind and Radix UI components
 
-EasyClinic is a web-based solution that provides:
+## Tech Stack
 
-* Online doctor appointment booking<img width="1914" height="828" alt="Screenshot 2025-08-28 093502" src="https://github.com/user-attachments/assets/3aa9ebe6-9f24-4eb7-a4e3-075695609548" />
+- Next.js App Router
+- React
+- Tailwind CSS
+- Shadcn UI / Radix UI
+- Clerk
+- Prisma
+- Neon PostgreSQL
+- Vonage Video API
+- Sonner notifications
 
-* Secure video consultations using **Vonage (OpenTok)**
-* Staff and clinic management tools
-* Real-time patient-doctor interaction
-* Clean & modern UI powered by Tailwind + Shadcn
+## Getting Started
 
----
-
-## 🚀 **Tech Stack**
-
-### **Frontend**
-
-* Next.js (App Router)
-* React.js
-* Tailwind CSS
-* Shadcn UI / Radix UI
-
-### **Backend**
-
-* Next.js API Routes
-* Node.js
-* Prisma ORM
-* Neon PostgreSQL
-
-### **Auth & Security**
-
-* Clerk Authentication
-* Environment Variables
-
-### **Video & Real-Time Communication**
-
-* Vonage Video API (OpenTok)
-* WebRTC
-
-### **Dev Tools & Deployment**
-
-* Vercel
-* Git & GitHub
-* Sonner Notifications
-
----
-
-## 🧱 **Project Structure**
-
-```
-easyclinic/
-│
-├── app/                     # Next.js App Router
-│   ├── api/                 # API routes (backend logic)
-│   │   └── video/           # Vonage video session handlers
-│   ├── appointments/        # Appointment pages
-│   ├── video-call/          # Video call interface
-│   └── layout.js            # Root layout
-│
-├── components/              # Reusable UI components
-│   └── ui/                  # Buttons, Cards, Modals, etc.
-│   └── VideoCallUI.js       # Video call component
-│
-├── prisma/                  # Prisma schema & DB migrations
-│   └── schema.prisma
-│
-├── public/                  # Static assets (images, icons)
-│   └── images/
-│
-├── styles/                  # Global styling
-│   └── globals.css
-│
-├── .env.local               # Environment variables
-├── package.json
-├── next.config.js
-└── README.md
-```
-
----
-
-## ⚙️ **Getting Started**
-
-### **1. Install dependencies**
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### **2. Set up environment variables**
-
-Create a `.env.local` file:
+Set up local environment variables in `.env`:
 
 ```env
 DATABASE_URL=""
-CLERK_PUBLISHABLE_KEY=""
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
 CLERK_SECRET_KEY=""
-VONAGE_API_KEY=""
-VONAGE_API_SECRET=""
-VONAGE_APP_ID=""
+NEXT_PUBLIC_VONAGE_APPLICATION_ID=""
+VONAGE_PRIVATE_KEY=""
 ```
 
-### **3. Run Prisma migrations**
+Generate Prisma client:
 
 ```bash
-npx prisma migrate dev
+npm run prisma:generate
 ```
 
-### **4. Start development server**
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Open **[http://localhost:3000](http://localhost:3000)** in the browser.
+Open `http://localhost:3000` in your browser.
 
----
+## Build
 
-## 🩺 **Features**
+```bash
+npm run build
+```
 
-* 📅 Book and manage clinic appointments
-* 🎥 Live video consultations (Vonage + WebRTC)
-* 🔐 Secure authentication (Clerk)
-* 📊 Clinic, doctor, and patient dashboard
-* 🗂️ Patient records & management
-* 🖼️ Modern & responsive UI (Shadcn + Tailwind)
-* 🔔 Toast notifications (Sonner)
+## Author
 
----
-
-## 👨‍💻 **Author Contact**
-
-**Email:** [arvindrana8650@gmail.com](mailto:arvindrana8650@gmail.com)
-
----
-
+Arvind Rana
