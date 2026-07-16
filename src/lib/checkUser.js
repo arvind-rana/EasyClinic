@@ -54,6 +54,7 @@ export const checkUser = async () => {
 
     return newUser;
   } catch (error) {
-    console.log(error.message);
+    console.error("Failed to check user:", error.message);
+    return null;
   }
 };

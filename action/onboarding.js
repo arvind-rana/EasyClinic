@@ -97,7 +97,7 @@ export async function getCurrentUser() {
 
     return user;
   } catch (error) {
-    console.error("Failed to get user information:", error);
+    console.error("Failed to get user information:", error.message);
     return null;
   }
 }

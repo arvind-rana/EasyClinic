@@ -4,16 +4,15 @@ import Link from "next/link";
 import React from "react";
 import {
     SignInButton,
-    SignUpButton,
     SignedIn,
     SignedOut,
     UserButton,
 
   } from '@clerk/nextjs'
 import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 import { checkUser } from "@/lib/checkUser";
 import {
-  Badge,
   Calendar,
   CreditCard,
   ShieldCheck,
@@ -32,7 +31,7 @@ const Header = async () => {
   return (
     <header
       className="fixed w-full top-0 border-b bg-background/80 backdrop-blur-md  z-10 
-    supports-[backdrop-filter]:bg-backgound/60"
+    supports-[backdrop-filter]:bg-background/60"
     >
       <nav className="container mx-auto px-2 h-16 flex items-center justify-between">
         <Link href="/">
@@ -49,90 +48,115 @@ const Header = async () => {
            
            {/* Admin Links */}
            {user?.role === "ADMIN" && (
-              <Link href="/admin">
+              <>
                 <Button
+                  asChild
                   variant="outline"
                   className="hidden md:inline-flex items-center gap-2"
                 >
-                  <ShieldCheck className="h-4 w-4" />
-                  Admin Dashboard
+                  <Link href="/admin">
+                    <ShieldCheck className="h-4 w-4" />
+                    Admin Dashboard
+                  </Link>
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                  <ShieldCheck className="h-4 w-4" />
+                <Button asChild variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <Link href="/admin">
+                    <ShieldCheck className="h-4 w-4" />
+                  </Link>
                 </Button>
-              </Link>
+              </>
             )}
 
             {/* Doctor Links */}
             {user?.role === "DOCTOR" && (
-              <Link href="/doctor">
+              <>
                 <Button
+                  asChild
                   variant="outline"
                   className="hidden md:inline-flex items-center gap-2"
                 >
-                  <Stethoscope className="h-4 w-4" />
-                  Doctor Dashboard
+                  <Link href="/doctor">
+                    <Stethoscope className="h-4 w-4" />
+                    Doctor Dashboard
+                  </Link>
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                  <Stethoscope className="h-4 w-4" />
+                <Button asChild variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <Link href="/doctor">
+                    <Stethoscope className="h-4 w-4" />
+                  </Link>
                 </Button>
-              </Link>
+              </>
             )}
 
             {/* Patient Links */}
             {user?.role === "PATIENT" && (
-              <Link href="/appointments">
+              <>
                 <Button
+                  asChild
                   variant="outline"
                   className="hidden md:inline-flex items-center gap-2"
                 >
-                  <Calendar className="h-4 w-4" />
-                  My Appointments
+                  <Link href="/appointments">
+                    <Calendar className="h-4 w-4" />
+                    My Appointments
+                  </Link>
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                  <Calendar className="h-4 w-4" />
+                <Button asChild variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <Link href="/appointments">
+                    <Calendar className="h-4 w-4" />
+                  </Link>
                 </Button>
-              </Link>
+              </>
             )}
 
 
             {
               user?.role === "UNASSIGNED" && (
-              <Link href="/onboarding">
-                <Button variant="outline"
-                 className="hidden md:inline-flex ites-center gap-2">
-                 <User className="h-4 w-4"/>
-                 Complete Profile
+              <>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="hidden md:inline-flex items-center gap-2"
+                >
+                  <Link href="/onboarding">
+                    <User className="h-4 w-4"/>
+                    Complete Profile
+                  </Link>
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                 <User className="h-4 w-4"/>
+                <Button asChild variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <Link href="/onboarding">
+                    <User className="h-4 w-4"/>
+                  </Link>
                 </Button>
-              </Link>
+              </>
               )
             }
           </SignedIn>
 
-          {(!user || user?.role !== "PATIENT") && (
-            <Link href="/pricing">
-              <Badge
-                variant="outline"
-                className="h-9 bg-emerald-900/20 border-emerald-700/30 px-3 py-1 flex items-center gap-2"
-              >
+          {(!user || user?.role !== "ADMIN") && (
+            <Badge
+              asChild
+              variant="outline"
+              className="h-9 bg-emerald-900/20 border-emerald-700/30 px-3 py-1 flex items-center gap-2"
+            >
+              <Link href={user?.role === "PATIENT" ? "/pricing" : "/doctor"}>
                 <CreditCard className="h-3.5 w-3.5 text-emerald-400" />
                 <span className="text-emerald-400">
-                  {user && user.role !== "PATIENT" ? (
+                  {user && user.role !== "ADMIN" ? (
                     <>
                       {user.credits}{" "}
                       <span className="hidden md:inline">
-                        Credits
+                        {user?.role === "PATIENT"
+                          ? "Credits"
+                          : "Earned Credits"}
                       </span>
                     </>
                   ) : (
                     <>Pricing</>
                   )}
                 </span>
-              </Badge>
-            </Link>
+              </Link>
+            </Badge>
           )}
 
           <SignedOut>
