@@ -52,9 +52,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
-            <Image src="/banner2.jpg" alt="banner" width={800} height={400} />
-
+            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-emerald-900/30 shadow-2xl">
+              <Image
+                src="/banner2.jpg"
+                alt="EasyClinic Medical Banner"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

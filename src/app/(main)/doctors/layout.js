@@ -1,6 +1,6 @@
 import React from "react";
 export const metadata = {
-    title: "Find Doctors - MediMeet",
+    title: "Find Doctors - EasyClinic",
     description: "Browse and book appointments with top healthcare providers",
   };
   

@@ -59,10 +59,7 @@ export default function OnboardingPage() {
   const handlePatientSelection = async () => {
     if (loading) return;
 
-    const formData = new FormData();
-    formData.append("role", "PATIENT");
-
-    await submitUserRole(formData);
+    await submitUserRole({ role: "PATIENT" });
   };
 
   useEffect(() => {
@@ -72,17 +69,16 @@ export default function OnboardingPage() {
   }, [data]);
 
   // Added missing onDoctorSubmit function
-  const onDoctorSubmit = async (data) => {
+  const onDoctorSubmit = async (formData) => {
     if (loading) return;
 
-    const formData = new FormData();
-    formData.append("role", "DOCTOR");
-    formData.append("specialty", data.specialty);
-    formData.append("experience", data.experience.toString());
-    formData.append("credentialUrl", data.credentialUrl);
-    formData.append("description", data.description);
-
-    await submitUserRole(formData);
+    await submitUserRole({
+      role: "DOCTOR",
+      specialty: formData.specialty,
+      experience: formData.experience,
+      credentialUrl: formData.credentialUrl,
+      description: formData.description,
+    });
   };
 
   // Role selection screen
@@ -105,8 +101,13 @@ export default function OnboardingPage() {
               healthcare journey
             </CardDescription>
             <Button
+              type="button"
               className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
               disabled={loading}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!loading) handlePatientSelection();
+              }}
             >
               {loading ? (
                 <>
@@ -136,8 +137,13 @@ export default function OnboardingPage() {
               provide consultations
             </CardDescription>
             <Button
+              type="button"
               className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
               disabled={loading}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!loading) setStep("doctor-form");
+              }}
             >
               Continue as Doctor
             </Button>
